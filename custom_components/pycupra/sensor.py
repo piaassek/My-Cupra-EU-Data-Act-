@@ -79,8 +79,10 @@ class EUDASensor(CoordinatorEntity[EUDADataUpdateCoordinator], SensorEntity):
         super().__init__(coordinator)
         self._sensor_key = sensor_key
         self._sensor_def = sensor_def
+        self._attr_has_entity_name = True
+        self._attr_translation_key = sensor_key
+        self._attr_name = sensor_def.get("name", sensor_key.title())
         self._vin = coordinator.vin
-        self._attr_name = f"{vehicle.nickname or self._vin} {sensor_def.get('name', sensor_key.title())}"
         self._attr_unique_id = f"{self._vin}-euda-sensor-{sensor_key}"
         self._attr_native_unit_of_measurement = sensor_def.get("unit")
         
@@ -126,9 +128,8 @@ class EUDASensor(CoordinatorEntity[EUDADataUpdateCoordinator], SensorEntity):
         if self._sensor_key == "battery_level":
             val = self.native_value
             if val is not None:
-                charging = str(self.vehicle.getEUDADataFieldValue("17e75411-e651-3ba5-9358-6aab3b022581")).upper() == "CONNECTED"
                 try:
-                    return icon_for_battery_level(battery_level=int(val), charging=charging)
+                    return icon_for_battery_level(battery_level=int(val))
                 except Exception:
                     pass
         return self._sensor_def.get("icon")
@@ -146,13 +147,15 @@ class EUDASensor(CoordinatorEntity[EUDADataUpdateCoordinator], SensorEntity):
 
 
 class EUDALastUpdateSensor(CoordinatorEntity[EUDADataUpdateCoordinator], SensorEntity):
-    """Sensor showing timestamp of the newest EUDA telemetry file."""
+    """Sensor showing timestamp of the newest processed EUDA data package."""
 
     def __init__(self, coordinator: EUDADataUpdateCoordinator, vehicle) -> None:
         """Initialize."""
         super().__init__(coordinator)
         self._vin = coordinator.vin
-        self._attr_name = f"{vehicle.nickname or self._vin} Last Update"
+        self._attr_has_entity_name = True
+        self._attr_translation_key = "last_update"
+        self._attr_name = "Last Update"
         self._attr_unique_id = f"{self._vin}-euda-sensor-last_update"
         self._attr_icon = "mdi:clock-check-outline"
         self._attr_device_class = SensorDeviceClass.TIMESTAMP

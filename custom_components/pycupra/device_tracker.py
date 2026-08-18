@@ -38,7 +38,8 @@ class EUDADeviceTracker(CoordinatorEntity[EUDADataUpdateCoordinator], TrackerEnt
         """Initialize tracker."""
         super().__init__(coordinator)
         self._vin = coordinator.vin
-        self._attr_name = f"{vehicle.nickname or self._vin} Location"
+        self._attr_has_entity_name = True
+        self._attr_name = "Location"
         self._attr_unique_id = f"{self._vin}-euda-tracker"
         self._attr_icon = "mdi:car"
 
