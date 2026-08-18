@@ -639,30 +639,28 @@ class EUDAConnection:
 
     async def terminate(self) -> None:
         """Log out from connect services"""
-        await self.logout()
+        try:
+            await self.logout()
+        except Exception as e:
+            self._LOGGER.debug(f"Error during terminate: {e}")
 
     async def logout(self) -> None:
         """Logout, revoke tokens."""
         self._LOGGER.info("Initiating logout.")
-        url = EUDA_API_LOGOUT.format(baseurl=EUDA_BASE_URL)
-        # response = await self.get(url)
-        response = await self._session._request(
-            method=METH_GET,
-            str_or_url=url,
-            headers=self._session_headers,
-            cookies=self._session_cookies,
-        )
-        if response.status != 200:
-            self._LOGGER.error(
-                f'Request for "{url}" returned with status code [{response.status}], response: {response}'
+        try:
+            url = EUDA_API_LOGOUT.format(baseurl=EUDA_BASE_URL)
+            response = await self._session._request(
+                method=METH_GET,
+                str_or_url=url,
+                headers=self._session_headers,
+                cookies=self._session_cookies,
+                allow_redirects=True,
             )
-            raise PyCupraException(
-                f"http.get for logout failed. Response status: {response.status}"
-            )
-        self._LOGGER.info(
-            f"Sent logout call to API. Response status = {response.status}"
-        )
-        self._clear_cookies()
+            self._LOGGER.debug(f"Sent logout call to API. Response status = {response.status}")
+        except Exception as e:
+            self._LOGGER.debug(f"Error during logout: {e}")
+        finally:
+            self._clear_cookies()
 
     # HTTP methods to API
     async def get(self, url: str, vin="") -> Any:

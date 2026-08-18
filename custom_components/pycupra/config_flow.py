@@ -86,16 +86,16 @@ class EUDAConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                     else:
                         # Multiple vehicles found, let user pick
                         return await self.async_step_vehicle()
-            except config_entries.FlowResult as fr:
-                raise fr
             except Exception as err:
-                # Check if it's an AbortFlow or other HA flow exception
-                if err.__class__.__name__ == "AbortFlow":
+                if isinstance(err, config_entries.FlowResult) or err.__class__.__name__ == "AbortFlow":
                     raise err
                 _LOGGER.error(f"Login error during config flow: {err}")
                 self._errors["base"] = "cannot_connect"
             finally:
-                await connection.terminate()
+                try:
+                    await connection.terminate()
+                except Exception:
+                    pass
 
         schema = vol.Schema(
             {
