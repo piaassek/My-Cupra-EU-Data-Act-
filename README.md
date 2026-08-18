@@ -10,6 +10,18 @@ Integracja pobiera telemetrię bezpośrednio z portalu EU Data Act grupy VW, eli
 
 ---
 
+## ⚠️ Wymagania wstępne (Prerequisites)
+
+Zanim dodasz integrację do Home Assistant, **musisz jednorazowo aktywować dostęp do danych w oficjalnym portalu VW Group EU Data Act**:
+
+1. Przejdź na oficjalny portal: **[https://eu-data-act.drivesomethinggreater.com/](https://eu-data-act.drivesomethinggreater.com/)**
+2. Zaloguj się danymi swojego konta **My Cupra / Cupra ID** (lub odpowiednio konta *Volkswagen ID*, *Skoda ID*, *Seat ID*, *Audi ID*).
+3. Upewnij się, że Twój pojazd (numer VIN) jest widoczny na liście pojazdów.
+4. Zaakceptuj zgody na udostępnianie danych telemetrycznych (**Data Sharing Consent**) dla swojego pojazdu.
+5. Dopiero po tej jednorazowej aktywacji serwery VW Group rozpoczną udostępnianie paczek telemetrii dla integracji.
+
+---
+
 ## ✨ Kluczowe funkcje
 
 - 🚀 **100% bezpośrednia komunikacja z EU Data Act (EUDA)** – stabilny dostęp do danych bez zależności od starego API OLA.
