@@ -1,0 +1,41 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Połącz z kontem pojazdu (EU Data Act)",
+        "description": "Podaj dane logowania do konta My Cupra / VW Group. Dane telemetrii będą pobierane bezpośrednio przez oficjalne serwery EU Data Act.",
+        "data": {
+          "brand": "Marka",
+          "username": "Adres e-mail",
+          "password": "Hasło"
+        }
+      },
+      "vehicle": {
+        "title": "Wybierz pojazd",
+        "description": "Wybierz pojazd powiązany z Twoim kontem:",
+        "data": {
+          "vehicle": "Pojazd",
+          "scan_interval": "Częstotliwość odświeżania danych (w minutach)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Nie można połączyć się z serwerami EU Data Act. Sprawdź połączenie.",
+      "invalid_auth": "Nieprawidłowy adres e-mail lub hasło.",
+      "no_vehicles": "Nie znaleziono pojazdów na podanym koncie."
+    },
+    "abort": {
+      "already_configured": "Ten pojazd został już wcześniej skonfigurowany."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Ustawienia pobierania danych",
+        "data": {
+          "scan_interval": "Częstotliwość odświeżania danych (w minutach)"
+        }
+      }
+    }
+  }
+}
