@@ -146,6 +146,11 @@
       "force_update": {
         "name": "Wymuś aktualizację danych"
       }
+    },
+    "device_tracker": {
+      "location": {
+        "name": "Lokalizacja"
+      }
     }
   }
 }

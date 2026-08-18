@@ -81,7 +81,6 @@ class EUDASensor(CoordinatorEntity[EUDADataUpdateCoordinator], SensorEntity):
         self._sensor_def = sensor_def
         self._attr_has_entity_name = True
         self._attr_translation_key = sensor_key
-        self._attr_name = sensor_def.get("name", sensor_key.title())
         self._vin = coordinator.vin
         self._attr_unique_id = f"{self._vin}-euda-sensor-{sensor_key}"
         self._attr_native_unit_of_measurement = sensor_def.get("unit")
@@ -155,7 +154,6 @@ class EUDALastUpdateSensor(CoordinatorEntity[EUDADataUpdateCoordinator], SensorE
         self._vin = coordinator.vin
         self._attr_has_entity_name = True
         self._attr_translation_key = "last_update"
-        self._attr_name = "Last Update"
         self._attr_unique_id = f"{self._vin}-euda-sensor-last_update"
         self._attr_icon = "mdi:clock-check-outline"
         self._attr_device_class = SensorDeviceClass.TIMESTAMP

@@ -130,7 +130,6 @@ class EUDABinarySensor(CoordinatorEntity[EUDADataUpdateCoordinator], BinarySenso
         self._sensor_def = sensor_def
         self._attr_has_entity_name = True
         self._attr_translation_key = sensor_key
-        self._attr_name = sensor_def.get("name", sensor_key.title())
         self._vin = coordinator.vin
         self._attr_unique_id = f"{self._vin}-euda-binary_sensor-{sensor_key}"
         

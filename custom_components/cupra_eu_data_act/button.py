@@ -32,7 +32,6 @@ class EUDARefreshButton(CoordinatorEntity[EUDADataUpdateCoordinator], ButtonEnti
         self._vin = coordinator.vin
         self._attr_has_entity_name = True
         self._attr_translation_key = "force_update"
-        self._attr_name = "Request Update"
         self._attr_unique_id = f"{self._vin}-euda-button-refresh"
         self._attr_icon = "mdi:cloud-download"
 

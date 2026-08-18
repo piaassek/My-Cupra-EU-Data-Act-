@@ -150,6 +150,9 @@ Zanim dodasz integrację do Home Assistant, **musisz jednorazowo skonfigurować 
 
 ## 🔄 Historia wydań (Releases / Changelog)
 
+### [1.0.4] - 2026-08-18
+- 🇵🇱 **Wymuszenie polskich nazw encji**: Usunięto nadpisujące nazwy statyczne (`_attr_name`), dzięki czemu Home Assistant automatycznie tłumaczy wszystkie nazwy sensorów, sensorów binarnych, przycisków i trackera GPS na język polski (zgodnie z językiem interfejsu HA).
+
 ### [1.0.3] - 2026-08-18
 - 🐛 **Poprawka sensorów binarnych**: Usunięto błąd `AttributeError: 'EUDABinarySensor' object has no attribute '_sensor_def'` blokujący ładowanie encji otwarcia drzwi, okien, zamka i stanu ładowania.
 - 🇵🇱 **Pełna lokalizacja**: Dodano kompletne polskie (`pl.json`) oraz angielskie (`en.json`) nazwy dla wszystkich 34 encji.
