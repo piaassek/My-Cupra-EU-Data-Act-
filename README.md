@@ -133,8 +133,8 @@ Zanim dodasz integrację do Home Assistant, **musisz jednorazowo skonfigurować 
 6. Zrestartuj Home Assistant.
 
 ### Opcja 2: Ręczna instalacja
-1. Pobierz zawartość katalogu `custom_components/pycupra` z tego repozytorium.
-2. Skopiuj folder `pycupra` do katalogu `/config/custom_components/` na swoim serwerze Home Assistant.
+1. Pobierz zawartość katalogu `custom_components/cupra_eu_data_act` z tego repozytorium.
+2. Skopiuj folder `cupra_eu_data_act` do katalogu `/config/custom_components/` na swoim serwerze Home Assistant.
 3. Zrestartuj Home Assistant.
 
 ---
