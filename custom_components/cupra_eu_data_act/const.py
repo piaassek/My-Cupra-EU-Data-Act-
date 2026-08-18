@@ -2,7 +2,7 @@
 
 from homeassistant.const import Platform
 
-DOMAIN = "pycupra"
+DOMAIN = "cupra_eu_data_act"
 
 CONF_BRAND = "brand"
 CONF_USERNAME = "username"
