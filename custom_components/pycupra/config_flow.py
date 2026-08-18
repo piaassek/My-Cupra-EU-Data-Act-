@@ -159,17 +159,13 @@ class EUDAConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
 
     @staticmethod
     @callback
-    def async_get_options_flow(config_entry):
+    def async_get_options_flow(config_entry: config_entries.ConfigEntry) -> config_entries.OptionsFlow:
         """Get the options flow for this handler."""
-        return EUDAOptionsFlowHandler(config_entry)
+        return EUDAOptionsFlowHandler()
 
 
 class EUDAOptionsFlowHandler(config_entries.OptionsFlow):
     """Handle EUDA options."""
-
-    def __init__(self, config_entry: config_entries.ConfigEntry) -> None:
-        """Initialize options flow."""
-        self.config_entry = config_entry
 
     async def async_step_init(self, user_input=None):
         """Manage options."""
