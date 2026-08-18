@@ -1,0 +1,151 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Połącz z kontem pojazdu (EU Data Act)",
+        "description": "Podaj dane logowania do konta My Cupra / VW Group. Dane telemetrii będą pobierane bezpośrednio przez oficjalne serwery EU Data Act.",
+        "data": {
+          "brand": "Marka",
+          "username": "Adres e-mail",
+          "password": "Hasło"
+        }
+      },
+      "vehicle": {
+        "title": "Wybierz pojazd",
+        "description": "Wybierz pojazd powiązany z Twoim kontem:",
+        "data": {
+          "vehicle": "Pojazd",
+          "scan_interval": "Częstotliwość odświeżania danych (w minutach)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Nie można połączyć się z serwerami EU Data Act. Sprawdź połączenie.",
+      "invalid_auth": "Nieprawidłowy adres e-mail lub hasło.",
+      "no_vehicles": "Nie znaleziono pojazdów na podanym koncie."
+    },
+    "abort": {
+      "already_configured": "Ten pojazd został już wcześniej skonfigurowany."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Ustawienia pobierania danych",
+        "data": {
+          "scan_interval": "Częstotliwość odświeżania danych (w minutach)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "battery_level": {
+        "name": "Poziom baterii"
+      },
+      "electric_range": {
+        "name": "Zasięg na prądzie"
+      },
+      "mileage": {
+        "name": "Przebieg całkowity"
+      },
+      "target_soc": {
+        "name": "Docelowy limit ładowania"
+      },
+      "charging_remaining_time": {
+        "name": "Pozostały czas ładowania"
+      },
+      "battery_temperature_max": {
+        "name": "Maksymalna temperatura baterii HV"
+      },
+      "battery_temperature_min": {
+        "name": "Minimalna temperatura baterii HV"
+      },
+      "target_climatisation_temperature": {
+        "name": "Docelowa temperatura klimatyzacji"
+      },
+      "climatisation_status": {
+        "name": "Status klimatyzacji"
+      },
+      "window_heating": {
+        "name": "Ogrzewanie szyb"
+      },
+      "plug_connection_state": {
+        "name": "Stan podłączenia wtyczki"
+      },
+      "plug_lock_state": {
+        "name": "Stan blokady wtyczki"
+      },
+      "service_inspection_days": {
+        "name": "Dni do przeglądu"
+      },
+      "short_term_distance": {
+        "name": "Dystans ostatniej trasy"
+      },
+      "short_term_duration": {
+        "name": "Czas ostatniej trasy"
+      },
+      "short_term_average_electric_engine_consumption": {
+        "name": "Średnie zużycie ostatniej trasy"
+      },
+      "long_term_distance": {
+        "name": "Dystans długoterminowy"
+      },
+      "long_term_duration": {
+        "name": "Czas trwania długoterminowy"
+      },
+      "long_term_average_electric_engine_consumption": {
+        "name": "Średnie zużycie długoterminowe"
+      },
+      "position_latitude": {
+        "name": "Szerokość geograficzna parkowania"
+      },
+      "position_longitude": {
+        "name": "Długość geograficzna parkowania"
+      },
+      "last_update": {
+        "name": "Ostatnia aktualizacja danych"
+      }
+    },
+    "binary_sensor": {
+      "is_parked": {
+        "name": "Zaparkowany"
+      },
+      "is_connected": {
+        "name": "Status online"
+      },
+      "locked": {
+        "name": "Zamek centralny"
+      },
+      "mirror_heating": {
+        "name": "Ogrzewanie lusterek"
+      },
+      "trunk_lid_status": {
+        "name": "Bagażnik"
+      },
+      "hood_status": {
+        "name": "Maska"
+      },
+      "window_front_left": {
+        "name": "Szyba lewy przód"
+      },
+      "window_front_right": {
+        "name": "Szyba prawy przód"
+      },
+      "window_rear_left": {
+        "name": "Szyba lewy tył"
+      },
+      "window_rear_right": {
+        "name": "Szyba prawy tył"
+      },
+      "plug_connected": {
+        "name": "Kabel podłączony"
+      }
+    },
+    "button": {
+      "force_update": {
+        "name": "Wymuś aktualizację danych"
+      }
+    }
+  }
+}
