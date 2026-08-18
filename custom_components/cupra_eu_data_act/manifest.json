@@ -1,12 +1,12 @@
 {
   "domain": "cupra_eu_data_act",
   "name": "My Cupra (EU Data Act)",
-  "codeowners": ["@WulfgarW"],
+  "codeowners": ["@piaassek"],
   "config_flow": true,
   "dependencies": [],
-  "documentation": "https://github.com/WulfgarW/homeassistant-cupra-eu-data-act/blob/main/README.md",
+  "documentation": "https://github.com/piaassek/My-Cupra-EU-Data-Act-/blob/main/README.md",
   "iot_class": "cloud_polling",
-  "issue_tracker": "https://github.com/WulfgarW/homeassistant-cupra-eu-data-act/issues",
+  "issue_tracker": "https://github.com/piaassek/My-Cupra-EU-Data-Act-/issues",
   "requirements": [
     "beautifulsoup4>=4.12.0",
     "xmltodict>=0.13.0",

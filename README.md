@@ -1,7 +1,7 @@
 # My Cupra & VW Group (EU Data Act) - Home Assistant Integration
 
 [![HACS Default](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/hacs/default)
-[![GitHub Release](https://img.shields.io/github/v/release/WulfgarW/homeassistant-pycupra?style=flat-square)](https://github.com/WulfgarW/homeassistant-pycupra/releases)
+[![GitHub Release](https://img.shields.io/github/v/release/piaassek/My-Cupra-EU-Data-Act-?style=flat-square)](https://github.com/piaassek/My-Cupra-EU-Data-Act-/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Dedykowana integracja dla **Home Assistant** obsługująca pojazdy **Cupra** (np. Cupra Born, Formentor, Leon) oraz grupy **Volkswagen** (VW, Skoda, Seat, Audi) za pośrednictwem oficjalnych serwerów **EU Data Act (EUDA)**.
@@ -127,7 +127,7 @@ Zanim dodasz integrację do Home Assistant, **musisz jednorazowo skonfigurować 
 ### Opcja 1: Przez HACS (Zalecana)
 1. Otwórz **HACS** w Home Assistant.
 2. Kliknij trzy kropki w prawym górnym rogu i wybierz **Niestandardowe repozytoria** (*Custom repositories*).
-3. Wklej adres URL tego repozytorium GitHub.
+3. Wklej adres URL repozytorium: `https://github.com/piaassek/My-Cupra-EU-Data-Act-`
 4. Wybierz typ: **Integracja** (*Integration*).
 5. Kliknij **Dodaj**, a następnie znajdź **My Cupra (EU Data Act)** i kliknij **Pobierz**.
 6. Zrestartuj Home Assistant.
@@ -145,6 +145,25 @@ Zanim dodasz integrację do Home Assistant, **musisz jednorazowo skonfigurować 
 2. Kliknij **+ Dodaj integrację** i wyszukaj **My Cupra (EU Data Act)**.
 3. Wybierz markę (np. **cupra** lub **volkswagen**) oraz wprowadź swój e-mail i hasło do konta Cupra/VW.
 4. Integracja automatycznie wykryje Twoje auto i utworzy wszystkie sensory oraz urządzenie.
+
+---
+
+## 🔄 Historia wydań (Releases / Changelog)
+
+### [1.0.3] - 2026-08-18
+- 🐛 **Poprawka sensorów binarnych**: Usunięto błąd `AttributeError: 'EUDABinarySensor' object has no attribute '_sensor_def'` blokujący ładowanie encji otwarcia drzwi, okien, zamka i stanu ładowania.
+- 🇵🇱 **Pełna lokalizacja**: Dodano kompletne polskie (`pl.json`) oraz angielskie (`en.json`) nazwy dla wszystkich 34 encji.
+- 🏷️ **Zmiana domeny integracji**: Oficjalna domena komponentu została ujednolicona na `cupra_eu_data_act`.
+- 🛠️ **Poprawka Config Flow & Options Flow**: Usunięto błąd 500 (`Internal Server Error`) przy przeładowywaniu i opcjach integracji w nowszych wersjach Home Assistant (2024+ / 2025+).
+
+### [1.0.2] - 2026-08-18
+- 📦 Aktualizacja struktury repozytorium pod kątem HACS (`cupra_eu_data_act`).
+
+### [1.0.1] - 2026-08-18
+- 🚗 Wstępna obsługa modeli Cupra Born, Formentor, Leon oraz platformy MEB.
+
+### [1.0.0] - 2026-08-18
+- 🎉 Pierwsze oficjalne wydanie z obsługą protokołu EU Data Act (EUDA).
 
 ---
 
