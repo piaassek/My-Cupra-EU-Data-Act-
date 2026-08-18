@@ -2,39 +2,149 @@
   "config": {
     "step": {
       "user": {
-        "title": "Połącz z kontem pojazdu (EU Data Act)",
-        "description": "Podaj dane logowania do konta My Cupra / VW Group. Dane telemetrii będą pobierane bezpośrednio przez oficjalne serwery EU Data Act.",
+        "title": "Connect Vehicle Account (EU Data Act)",
+        "description": "Enter your login credentials for My Cupra / VW Group. Telemetry data will be fetched directly via the official EU Data Act portal.",
         "data": {
-          "brand": "Marka",
-          "username": "Adres e-mail",
-          "password": "Hasło"
+          "brand": "Brand",
+          "username": "Email address",
+          "password": "Password"
         }
       },
       "vehicle": {
-        "title": "Wybierz pojazd",
-        "description": "Wybierz pojazd powiązany z Twoim kontem:",
+        "title": "Select Vehicle",
+        "description": "Select the vehicle associated with your account:",
         "data": {
-          "vehicle": "Pojazd",
-          "scan_interval": "Częstotliwość odświeżania danych (w minutach)"
+          "vehicle": "Vehicle",
+          "scan_interval": "Update frequency (minutes)"
         }
       }
     },
     "error": {
-      "cannot_connect": "Nie można połączyć się z serwerami EU Data Act. Sprawdź połączenie.",
-      "invalid_auth": "Nieprawidłowy adres e-mail lub hasło.",
-      "no_vehicles": "Nie znaleziono pojazdów na podanym koncie."
+      "cannot_connect": "Failed to connect to EU Data Act portal. Check network.",
+      "invalid_auth": "Invalid email address or password.",
+      "no_vehicles": "No vehicles found on this account."
     },
     "abort": {
-      "already_configured": "Ten pojazd został już wcześniej skonfigurowany."
+      "already_configured": "This vehicle is already configured."
     }
   },
   "options": {
     "step": {
       "init": {
-        "title": "Ustawienia pobierania danych",
+        "title": "Data Update Settings",
         "data": {
-          "scan_interval": "Częstotliwość odświeżania danych (w minutach)"
+          "scan_interval": "Update frequency (minutes)"
         }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "battery_level": {
+        "name": "Battery level"
+      },
+      "electric_range": {
+        "name": "Electric range"
+      },
+      "mileage": {
+        "name": "Odometer"
+      },
+      "target_soc": {
+        "name": "Target SoC"
+      },
+      "charging_remaining_time": {
+        "name": "Charging remaining time"
+      },
+      "battery_temperature_max": {
+        "name": "HV Battery temperature max"
+      },
+      "battery_temperature_min": {
+        "name": "HV Battery temperature min"
+      },
+      "target_climatisation_temperature": {
+        "name": "Target climatisation temperature"
+      },
+      "climatisation_status": {
+        "name": "Climatisation status"
+      },
+      "window_heating": {
+        "name": "Window heating"
+      },
+      "plug_connection_state": {
+        "name": "Plug connection state"
+      },
+      "plug_lock_state": {
+        "name": "Plug lock state"
+      },
+      "service_inspection_days": {
+        "name": "Inspection due in"
+      },
+      "short_term_distance": {
+        "name": "Last short length"
+      },
+      "short_term_duration": {
+        "name": "Last short duration"
+      },
+      "short_term_average_electric_engine_consumption": {
+        "name": "Short term electric consumption"
+      },
+      "long_term_distance": {
+        "name": "Last long length"
+      },
+      "long_term_duration": {
+        "name": "Last long duration"
+      },
+      "long_term_average_electric_engine_consumption": {
+        "name": "Long term electric consumption"
+      },
+      "position_latitude": {
+        "name": "Parking latitude"
+      },
+      "position_longitude": {
+        "name": "Parking longitude"
+      },
+      "last_update": {
+        "name": "Last update"
+      }
+    },
+    "binary_sensor": {
+      "is_parked": {
+        "name": "Is Parked"
+      },
+      "is_connected": {
+        "name": "Is Online"
+      },
+      "locked": {
+        "name": "Locked"
+      },
+      "mirror_heating": {
+        "name": "Mirror Heating Enabled"
+      },
+      "trunk_lid_status": {
+        "name": "Trunk"
+      },
+      "hood_status": {
+        "name": "Hood"
+      },
+      "window_front_left": {
+        "name": "Window Front Left"
+      },
+      "window_front_right": {
+        "name": "Window Front Right"
+      },
+      "window_rear_left": {
+        "name": "Window Rear Left"
+      },
+      "window_rear_right": {
+        "name": "Window Rear Right"
+      },
+      "plug_connected": {
+        "name": "Cable Connected"
+      }
+    },
+    "button": {
+      "force_update": {
+        "name": "Force update data"
       }
     }
   }

@@ -37,5 +37,115 @@
         }
       }
     }
+  },
+  "entity": {
+    "sensor": {
+      "battery_level": {
+        "name": "Battery level"
+      },
+      "electric_range": {
+        "name": "Electric range"
+      },
+      "mileage": {
+        "name": "Odometer"
+      },
+      "target_soc": {
+        "name": "Target SoC"
+      },
+      "charging_remaining_time": {
+        "name": "Charging remaining time"
+      },
+      "battery_temperature_max": {
+        "name": "HV Battery temperature max"
+      },
+      "battery_temperature_min": {
+        "name": "HV Battery temperature min"
+      },
+      "target_climatisation_temperature": {
+        "name": "Target climatisation temperature"
+      },
+      "climatisation_status": {
+        "name": "Climatisation status"
+      },
+      "window_heating": {
+        "name": "Window heating"
+      },
+      "plug_connection_state": {
+        "name": "Plug connection state"
+      },
+      "plug_lock_state": {
+        "name": "Plug lock state"
+      },
+      "service_inspection_days": {
+        "name": "Inspection due in"
+      },
+      "short_term_distance": {
+        "name": "Last short length"
+      },
+      "short_term_duration": {
+        "name": "Last short duration"
+      },
+      "short_term_average_electric_engine_consumption": {
+        "name": "Short term electric consumption"
+      },
+      "long_term_distance": {
+        "name": "Last long length"
+      },
+      "long_term_duration": {
+        "name": "Last long duration"
+      },
+      "long_term_average_electric_engine_consumption": {
+        "name": "Long term electric consumption"
+      },
+      "position_latitude": {
+        "name": "Parking latitude"
+      },
+      "position_longitude": {
+        "name": "Parking longitude"
+      },
+      "last_update": {
+        "name": "Last update"
+      }
+    },
+    "binary_sensor": {
+      "is_parked": {
+        "name": "Is Parked"
+      },
+      "is_connected": {
+        "name": "Is Online"
+      },
+      "locked": {
+        "name": "Locked"
+      },
+      "mirror_heating": {
+        "name": "Mirror Heating Enabled"
+      },
+      "trunk_lid_status": {
+        "name": "Trunk"
+      },
+      "hood_status": {
+        "name": "Hood"
+      },
+      "window_front_left": {
+        "name": "Window Front Left"
+      },
+      "window_front_right": {
+        "name": "Window Front Right"
+      },
+      "window_rear_left": {
+        "name": "Window Rear Left"
+      },
+      "window_rear_right": {
+        "name": "Window Rear Right"
+      },
+      "plug_connected": {
+        "name": "Cable Connected"
+      }
+    },
+    "button": {
+      "force_update": {
+        "name": "Force update data"
+      }
+    }
   }
 }
