@@ -10,15 +10,31 @@ Integracja pobiera telemetrię bezpośrednio z portalu EU Data Act grupy VW, eli
 
 ---
 
-## ⚠️ Wymagania wstępne (Prerequisites)
+## ⚠️ Wymagania wstępne: Konfiguracja portalu EU Data Act (Prerequisites)
 
-Zanim dodasz integrację do Home Assistant, **musisz jednorazowo aktywować dostęp do danych w oficjalnym portalu VW Group EU Data Act**:
+Zanim dodasz integrację do Home Assistant, **musisz jednorazowo skonfigurować żądanie danych w oficjalnym portalu VW Group EU Data Act**:
 
-1. Przejdź na oficjalny portal: **[https://eu-data-act.drivesomethinggreater.com/](https://eu-data-act.drivesomethinggreater.com/)**
-2. Zaloguj się danymi swojego konta **My Cupra / Cupra ID** (lub odpowiednio konta *Volkswagen ID*, *Skoda ID*, *Seat ID*, *Audi ID*).
-3. Upewnij się, że Twój pojazd (numer VIN) jest widoczny na liście pojazdów.
-4. Zaakceptuj zgody na udostępnianie danych telemetrycznych (**Data Sharing Consent**) dla swojego pojazdu.
-5. Dopiero po tej jednorazowej aktywacji serwery VW Group rozpoczną udostępnianie paczek telemetrii dla integracji.
+### 1. Logowanie do portalu EU Data Act
+1. Otwórz w przeglądarce portal: **[https://eu-data-act.drivesomethinggreater.com/](https://eu-data-act.drivesomethinggreater.com/)**
+2. Kliknij zielony przycisk **"Log in"**.
+3. Wybierz swoją markę (np. **SEAT** – dotyczy również użytkowników marki **Cupra**, lub Volkswagen, Skoda, Audi) i kliknij **"Login"**, a następnie **"Continue"**.
+4. Zaloguj się danymi swojego konta **My Cupra / Cupra ID** (lub odpowiednio VW ID / Skoda ID / SEAT ID).
+
+### 2. Zezwolenie na dostęp i konfiguracja żądania danych
+1. Po pomyślnym logowaniu nastąpi przekierowanie z powrotem do portalu EU Data Act z listą Twoich połączonych aut.
+2. Kliknij **"Vehicle details"** przy swoim pojeździe.
+3. Jeśli pojawi się monit, zezwól aplikacji **"My Data Portal"** na dostęp do danych pojazdu (*Data Sharing Consent*).
+4. Przejdź do sekcji **"Get customised data"** i kliknij przycisk **"Request customised data"**.
+5. Skonfiguruj nowe żądanie danych:
+   - **Data clusters**: Wybierz **wszystkie klastry danych** (*All data clusters*).
+   - **Interval**: Wybierz **15 minut** (*15 minutes*).
+   - **Duration / Time limit**: Wybierz czas **nieograniczony** (*Unlimited / No end date*).
+   - **Name**: Nazwij żądanie dowolnie (np. `All data 15mins`).
+6. Zatwierdź żądanie i wyloguj się.
+
+### 3. Oczekiwanie na wygenerowanie pierwszych plików danych
+- Wygenerowanie pierwszych paczek danych przez serwery producenta zajmuje od kilku godzin do maksymalnie 24h.
+- Po pewnym czasie zaloguj się ponownie na portal i wejdź w **"Vehicle details"** – gdy zobaczysz listę gotowych plików ZIP do pobrania, możesz przystąpić do konfiguracji integracji w Home Assistant.
 
 ---
 
