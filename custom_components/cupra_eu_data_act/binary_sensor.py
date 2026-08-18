@@ -127,6 +127,7 @@ class EUDABinarySensor(CoordinatorEntity[EUDADataUpdateCoordinator], BinarySenso
         """Initialize."""
         super().__init__(coordinator)
         self._sensor_key = sensor_key
+        self._sensor_def = sensor_def
         self._attr_has_entity_name = True
         self._attr_translation_key = sensor_key
         self._attr_name = sensor_def.get("name", sensor_key.title())

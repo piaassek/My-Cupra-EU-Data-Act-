@@ -12,5 +12,5 @@
     "xmltodict>=0.13.0",
     "pyjwt>=2.8.0"
   ],
-  "version": "1.0.2"
+  "version": "1.0.3"
 }
