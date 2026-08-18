@@ -5,6 +5,7 @@ import voluptuous as vol
 
 from homeassistant import config_entries
 from homeassistant.core import callback
+from homeassistant.data_entry_flow import AbortFlow
 from homeassistant.helpers.aiohttp_client import async_create_clientsession
 import homeassistant.helpers.config_validation as cv
 
@@ -86,9 +87,9 @@ class EUDAConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                     else:
                         # Multiple vehicles found, let user pick
                         return await self.async_step_vehicle()
+            except AbortFlow:
+                raise
             except Exception as err:
-                if isinstance(err, config_entries.FlowResult) or err.__class__.__name__ == "AbortFlow":
-                    raise err
                 _LOGGER.error(f"Login error during config flow: {err}")
                 self._errors["base"] = "cannot_connect"
             finally:
