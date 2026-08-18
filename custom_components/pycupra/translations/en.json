@@ -1,0 +1,41 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect Vehicle Account (EU Data Act)",
+        "description": "Enter your login credentials for My Cupra / VW Group. Telemetry data will be fetched directly via the official EU Data Act portal.",
+        "data": {
+          "brand": "Brand",
+          "username": "Email address",
+          "password": "Password"
+        }
+      },
+      "vehicle": {
+        "title": "Select Vehicle",
+        "description": "Select the vehicle associated with your account:",
+        "data": {
+          "vehicle": "Vehicle",
+          "scan_interval": "Update frequency (minutes)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to EU Data Act portal. Check network.",
+      "invalid_auth": "Invalid email address or password.",
+      "no_vehicles": "No vehicles found on this account."
+    },
+    "abort": {
+      "already_configured": "This vehicle is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Data Update Settings",
+        "data": {
+          "scan_interval": "Update frequency (minutes)"
+        }
+      }
+    }
+  }
+}

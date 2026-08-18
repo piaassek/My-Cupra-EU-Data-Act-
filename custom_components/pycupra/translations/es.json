@@ -1,0 +1,41 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Conectar cuenta de vehículo (EU Data Act)",
+        "description": "Introduzca sus credenciales de My Cupra / Grupo VW. Los datos se obtienen directamente mediante los servidores oficiales de EU Data Act.",
+        "data": {
+          "brand": "Marca",
+          "username": "Correo electrónico",
+          "password": "Contraseña"
+        }
+      },
+      "vehicle": {
+        "title": "Seleccionar vehículo",
+        "description": "Seleccione el vehículo asociado con su cuenta:",
+        "data": {
+          "vehicle": "Vehículo",
+          "scan_interval": "Intervalo de actualización (minutos)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Error al conectar con los servidores de EU Data Act. Compruebe la conexión.",
+      "invalid_auth": "Correo o contraseña no válidos.",
+      "no_vehicles": "No se han encontrado vehículos en esta cuenta."
+    },
+    "abort": {
+      "already_configured": "Este vehículo ya está configurado."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Ajustes de actualización",
+        "data": {
+          "scan_interval": "Intervalo de actualización (minutos)"
+        }
+      }
+    }
+  }
+}
