@@ -41,115 +41,115 @@
   "entity": {
     "sensor": {
       "battery_level": {
-        "name": "Poziom baterii"
+        "name": "Bateria: Poziom naładowania"
       },
       "electric_range": {
-        "name": "Zasięg na prądzie"
-      },
-      "mileage": {
-        "name": "Przebieg całkowity"
+        "name": "Bateria: Zasięg"
       },
       "target_soc": {
-        "name": "Docelowy limit ładowania"
+        "name": "Bateria: Docelowy limit ładowania"
       },
       "charging_remaining_time": {
-        "name": "Pozostały czas ładowania"
+        "name": "Bateria: Czas do pełnego naładowania"
       },
       "battery_temperature_max": {
-        "name": "Maksymalna temperatura baterii HV"
+        "name": "Bateria HV: Maksymalna temperatura"
       },
       "battery_temperature_min": {
-        "name": "Minimalna temperatura baterii HV"
-      },
-      "target_climatisation_temperature": {
-        "name": "Docelowa temperatura klimatyzacji"
-      },
-      "climatisation_status": {
-        "name": "Status klimatyzacji"
-      },
-      "window_heating": {
-        "name": "Ogrzewanie szyb"
+        "name": "Bateria HV: Minimalna temperatura"
       },
       "plug_connection_state": {
-        "name": "Stan podłączenia wtyczki"
+        "name": "Ładowanie: Stan wtyczki"
       },
       "plug_lock_state": {
-        "name": "Stan blokady wtyczki"
+        "name": "Ładowanie: Blokada wtyczki"
+      },
+      "target_climatisation_temperature": {
+        "name": "Klimatyzacja: Zadana temperatura"
+      },
+      "climatisation_status": {
+        "name": "Klimatyzacja: Status"
+      },
+      "window_heating": {
+        "name": "Klimatyzacja: Ogrzewanie szyb"
+      },
+      "mileage": {
+        "name": "Status: Przebieg całkowity"
       },
       "service_inspection_days": {
-        "name": "Dni do przeglądu"
-      },
-      "short_term_distance": {
-        "name": "Dystans ostatniej trasy"
-      },
-      "short_term_duration": {
-        "name": "Czas ostatniej trasy"
-      },
-      "short_term_average_electric_engine_consumption": {
-        "name": "Średnie zużycie ostatniej trasy"
-      },
-      "long_term_distance": {
-        "name": "Dystans długoterminowy"
-      },
-      "long_term_duration": {
-        "name": "Czas trwania długoterminowy"
-      },
-      "long_term_average_electric_engine_consumption": {
-        "name": "Średnie zużycie długoterminowe"
-      },
-      "position_latitude": {
-        "name": "Szerokość geograficzna parkowania"
-      },
-      "position_longitude": {
-        "name": "Długość geograficzna parkowania"
+        "name": "Status: Dni do przeglądu"
       },
       "last_update": {
-        "name": "Ostatnia aktualizacja danych"
+        "name": "Status: Ostatnia aktualizacja"
+      },
+      "short_term_distance": {
+        "name": "Trasa krótka: Dystans"
+      },
+      "short_term_duration": {
+        "name": "Trasa krótka: Czas trwania"
+      },
+      "short_term_average_electric_engine_consumption": {
+        "name": "Trasa krótka: Średnie zużycie energii"
+      },
+      "long_term_distance": {
+        "name": "Trasa długa: Dystans"
+      },
+      "long_term_duration": {
+        "name": "Trasa długa: Czas trwania"
+      },
+      "long_term_average_electric_engine_consumption": {
+        "name": "Trasa długa: Średnie zużycie energii"
+      },
+      "position_latitude": {
+        "name": "Lokalizacja: Szerokość geograficzna"
+      },
+      "position_longitude": {
+        "name": "Lokalizacja: Długość geograficzna"
       }
     },
     "binary_sensor": {
-      "is_parked": {
-        "name": "Zaparkowany"
-      },
-      "is_connected": {
-        "name": "Status online"
-      },
       "locked": {
-        "name": "Zamek centralny"
-      },
-      "mirror_heating": {
-        "name": "Ogrzewanie lusterek"
+        "name": "Drzwi: Zamek centralny"
       },
       "trunk_lid_status": {
-        "name": "Bagażnik"
+        "name": "Drzwi: Bagażnik"
       },
       "hood_status": {
-        "name": "Maska"
+        "name": "Drzwi: Przednia maska"
       },
       "window_front_left": {
-        "name": "Szyba lewy przód"
+        "name": "Okna: Szyba lewy przód"
       },
       "window_front_right": {
-        "name": "Szyba prawy przód"
+        "name": "Okna: Szyba prawy przód"
       },
       "window_rear_left": {
-        "name": "Szyba lewy tył"
+        "name": "Okna: Szyba lewy tył"
       },
       "window_rear_right": {
-        "name": "Szyba prawy tył"
+        "name": "Okna: Szyba prawy tył"
       },
       "plug_connected": {
-        "name": "Kabel podłączony"
+        "name": "Ładowanie: Kabel podłączony"
+      },
+      "mirror_heating": {
+        "name": "Klimatyzacja: Ogrzewanie lusterek"
+      },
+      "is_parked": {
+        "name": "Status: Zaparkowany"
+      },
+      "is_connected": {
+        "name": "Status: Połączenie online"
       }
     },
     "button": {
       "force_update": {
-        "name": "Wymuś aktualizację danych"
+        "name": "Status: Wymuś aktualizację danych"
       }
     },
     "device_tracker": {
       "location": {
-        "name": "Lokalizacja"
+        "name": "Lokalizacja: Pozycja pojazdu"
       }
     }
   }

@@ -73,52 +73,62 @@ Zanim dodasz integrację do Home Assistant, **musisz jednorazowo skonfigurować 
 
 ## 📋 Lista udostępnianych encji (34 encje)
 
-### Sensory (`sensor`)
-| Entity ID | Nazwa | Jednostka / Klasa |
-|---|---|---|
-| `sensor.<car>_battery_level` | Battery level | `%` (`battery`) |
-| `sensor.<car>_electric_range` | Electric range | `km` (`distance`) |
-| `sensor.<car>_odometer` | Odometer | `km` (`distance`) |
-| `sensor.<car>_target_soc` | Target SoC | `%` (`battery`) |
-| `sensor.<car>_charging_remaining_time` | Charging remaining time | `min` (`duration`) |
-| `sensor.<car>_hv_battery_temperature_max` | HV Battery temperature max | `°C` (`temperature`) |
-| `sensor.<car>_hv_battery_temperature_min` | HV Battery temperature min | `°C` (`temperature`) |
-| `sensor.<car>_target_climatisation_temperature` | Target climatisation temperature | `°C` (`temperature`) |
-| `sensor.<car>_climatisation_status` | Climatisation status | Tekst |
-| `sensor.<car>_window_heating` | Window heating | Tekst |
-| `sensor.<car>_plug_connection_state` | Plug connection state | Tekst |
-| `sensor.<car>_plug_lock_state` | Plug lock state | Tekst |
-| `sensor.<car>_inspection_due_in` | Inspection due in | `d` (`duration`) |
-| `sensor.<car>_last_short_length` | Last short length | `km` |
-| `sensor.<car>_last_short_duration` | Last short duration | `min` |
-| `sensor.<car>_short_term_consumption` | Short term electric consumption | `kWh/100km` |
-| `sensor.<car>_last_long_length` | Last long length | `km` |
-| `sensor.<car>_last_long_duration` | Last long duration | `min` |
-| `sensor.<car>_long_term_consumption` | Long term electric consumption | `kWh/100km` |
-| `sensor.<car>_parking_latitude` | Parking latitude | `°` |
-| `sensor.<car>_parking_longitude` | Parking longitude | `°` |
-| `sensor.<car>_last_update` | Last Update | `timestamp` |
+Wszystkie sensory posiadają ujednolicone prefiksy tematyczne, dzięki czemu na listach alfabetycznych w Home Assistant powiązane dane (np. dotyczące baterii, drzwi czy trasy) grupują się automatycznie obok siebie:
 
-### Sensory binarne (`binary_sensor`)
-| Entity ID | Nazwa | Typ urządzenia |
+### 🔋 Bateria i Ładowanie
+| Entity ID | Nazwa w HA | Jednostka / Klasa |
 |---|---|---|
-| `binary_sensor.<car>_is_parked` | Is Parked | Binarny |
-| `binary_sensor.<car>_is_online` | Is Online | `connectivity` |
-| `binary_sensor.<car>_locked` | Locked | `lock` |
-| `binary_sensor.<car>_mirror_heating_enabled` | Mirror Heating Enabled | Binarny |
-| `binary_sensor.<car>_trunk` | Trunk | `door` |
-| `binary_sensor.<car>_hood` | Hood | `opening` |
-| `binary_sensor.<car>_window_front_left` | Window Front Left | `window` |
-| `binary_sensor.<car>_window_front_right` | Window Front Right | `window` |
-| `binary_sensor.<car>_window_rear_left` | Window Rear Left | `window` |
-| `binary_sensor.<car>_window_rear_right` | Window Rear Right | `window` |
-| `binary_sensor.<car>_cable_connected` | Cable Connected | `plug` |
+| `sensor.<car>_battery_level` | Bateria: Poziom naładowania | `%` (`battery`) |
+| `sensor.<car>_electric_range` | Bateria: Zasięg | `km` (`distance`) |
+| `sensor.<car>_target_soc` | Bateria: Docelowy limit ładowania | `%` (`battery`) |
+| `sensor.<car>_charging_remaining_time` | Bateria: Czas do pełnego naładowania | `min` (`duration`) |
+| `sensor.<car>_hv_battery_temperature_max` | Bateria HV: Maksymalna temperatura | `°C` (`temperature`) |
+| `sensor.<car>_hv_battery_temperature_min` | Bateria HV: Minimalna temperatura | `°C` (`temperature`) |
+| `binary_sensor.<car>_cable_connected` | Ładowanie: Kabel podłączony | `plug` |
+| `sensor.<car>_plug_connection_state` | Ładowanie: Stan wtyczki | Tekst |
+| `sensor.<car>_plug_lock_state` | Ładowanie: Blokada wtyczki | Tekst |
 
-### Lokalizacja i Przyciski
-| Entity ID | Platforma | Opis |
+### 🚪 Drzwi, Okna i Zamki
+| Entity ID | Nazwa w HA | Typ urządzenia |
 |---|---|---|
-| `device_tracker.<car>` | `device_tracker` | Pozycja GPS pojazdu na mapie HA |
-| `button.<car>_force_update` | `button` | Przycisk natychmiastowego wymuszenia aktualizacji danych |
+| `binary_sensor.<car>_locked` | Drzwi: Zamek centralny | `lock` |
+| `binary_sensor.<car>_trunk` | Drzwi: Bagażnik | `door` |
+| `binary_sensor.<car>_hood` | Drzwi: Przednia maska | `opening` |
+| `binary_sensor.<car>_window_front_left` | Okna: Szyba lewy przód | `window` |
+| `binary_sensor.<car>_window_front_right` | Okna: Szyba prawy przód | `window` |
+| `binary_sensor.<car>_window_rear_left` | Okna: Szyba lewy tył | `window` |
+| `binary_sensor.<car>_window_rear_right` | Okna: Szyba prawy tył | `window` |
+
+### ❄️ Klimatyzacja i Ogrzewanie
+| Entity ID | Nazwa w HA | Jednostka / Typ |
+|---|---|---|
+| `sensor.<car>_climatisation_status` | Klimatyzacja: Status | Tekst |
+| `sensor.<car>_target_climatisation_temperature` | Klimatyzacja: Zadana temperatura | `°C` (`temperature`) |
+| `sensor.<car>_window_heating` | Klimatyzacja: Ogrzewanie szyb | Tekst |
+| `binary_sensor.<car>_mirror_heating_enabled` | Klimatyzacja: Ogrzewanie lusterek | Binarny |
+
+### 🚗 Status Pojazdu i Lokalizacja
+| Entity ID | Nazwa w HA | Typ / Klasa |
+|---|---|---|
+| `sensor.<car>_odometer` | Status: Przebieg całkowity | `km` (`distance`) |
+| `binary_sensor.<car>_is_parked` | Status: Zaparkowany | Binarny |
+| `binary_sensor.<car>_is_online` | Status: Połączenie online | `connectivity` |
+| `sensor.<car>_inspection_due_in` | Status: Dni do przeglądu | `d` (`duration`) |
+| `sensor.<car>_last_update` | Status: Ostatnia aktualizacja | `timestamp` |
+| `button.<car>_force_update` | Status: Wymuś aktualizację danych | `button` |
+| `device_tracker.<car>` | Lokalizacja: Pozycja pojazdu | `device_tracker` |
+| `sensor.<car>_parking_latitude` | Lokalizacja: Szerokość geograficzna | `°` |
+| `sensor.<car>_parking_longitude` | Lokalizacja: Długość geograficzna | `°` |
+
+### 📊 Statystyki Trasy
+| Entity ID | Nazwa w HA | Jednostka |
+|---|---|---|
+| `sensor.<car>_last_short_length` | Trasa krótka: Dystans | `km` |
+| `sensor.<car>_last_short_duration` | Trasa krótka: Czas trwania | `min` |
+| `sensor.<car>_short_term_consumption` | Trasa krótka: Średnie zużycie energii | `kWh/100km` |
+| `sensor.<car>_last_long_length` | Trasa długa: Dystans | `km` |
+| `sensor.<car>_last_long_duration` | Trasa długa: Czas trwania | `min` |
+| `sensor.<car>_long_term_consumption` | Trasa długa: Średnie zużycie energii | `kWh/100km` |
 
 ---
 
@@ -148,7 +158,70 @@ Zanim dodasz integrację do Home Assistant, **musisz jednorazowo skonfigurować 
 
 ---
 
+---
+
+## 🎨 Przykładowy widok Pulpitu (Lovelace Dashboard)
+
+Możesz wkleić poniższy kod karty `entities` / `grid` bezpośrednio do swojego pulpitu w Home Assistant, aby uzyskać przejrzyste, pogrupowane kafelki z danymi pojazdu:
+
+```yaml
+type: vertical-stack
+cards:
+  - type: glance
+    title: 🚗 Stan pojazdu
+    entities:
+      - entity: binary_sensor.cupra_<vin>_locked
+      - entity: binary_sensor.cupra_<vin>_is_parked
+      - entity: binary_sensor.cupra_<vin>_is_online
+      - entity: sensor.cupra_<vin>_odometer
+
+  - type: entities
+    title: 🔋 Bateria i Ładowanie
+    entities:
+      - entity: sensor.cupra_<vin>_battery_level
+      - entity: sensor.cupra_<vin>_electric_range
+      - entity: sensor.cupra_<vin>_target_soc
+      - entity: sensor.cupra_<vin>_charging_remaining_time
+      - entity: sensor.cupra_<vin>_hv_battery_temperature_max
+      - entity: sensor.cupra_<vin>_hv_battery_temperature_min
+      - entity: binary_sensor.cupra_<vin>_cable_connected
+      - entity: sensor.cupra_<vin>_plug_connection_state
+
+  - type: entities
+    title: 🚪 Drzwi i Okna
+    entities:
+      - entity: binary_sensor.cupra_<vin>_trunk
+      - entity: binary_sensor.cupra_<vin>_hood
+      - entity: binary_sensor.cupra_<vin>_window_front_left
+      - entity: binary_sensor.cupra_<vin>_window_front_right
+      - entity: binary_sensor.cupra_<vin>_window_rear_left
+      - entity: binary_sensor.cupra_<vin>_window_rear_right
+
+  - type: entities
+    title: ❄️ Klimatyzacja i Ogrzewanie
+    entities:
+      - entity: sensor.cupra_<vin>_climatisation_status
+      - entity: sensor.cupra_<vin>_target_climatisation_temperature
+      - entity: sensor.cupra_<vin>_window_heating
+      - entity: binary_sensor.cupra_<vin>_mirror_heating_enabled
+
+  - type: entities
+    title: 📊 Statystyki Trasy
+    entities:
+      - entity: sensor.cupra_<vin>_last_short_length
+      - entity: sensor.cupra_<vin>_last_short_duration
+      - entity: sensor.cupra_<vin>_short_term_consumption
+      - entity: sensor.cupra_<vin>_last_long_length
+      - entity: sensor.cupra_<vin>_last_long_duration
+      - entity: sensor.cupra_<vin>_long_term_consumption
+```
+
+---
+
 ## 🔄 Historia wydań (Releases / Changelog)
+
+### [1.0.5] - 2026-08-19
+- 🏷️ **Grupowanie tematyczne encji**: Wszystkie nazwy sensorów w języku polskim i angielskim otrzymały logiczne prefiksy tematyczne (`Bateria: ...`, `Drzwi: ...`, `Okna: ...`, `Klimatyzacja: ...`, `Ładowanie: ...`, `Status: ...`, `Trasa: ...`, `Lokalizacja: ...`), dzięki czemu na listach alfabetycznych w Home Assistant powiązane encje wyświetlają się zawsze razem.
 
 ### [1.0.4] - 2026-08-18
 - 🇵🇱 **Wymuszenie polskich nazw encji**: Usunięto nadpisujące nazwy statyczne (`_attr_name`), dzięki czemu Home Assistant automatycznie tłumaczy wszystkie nazwy sensorów, sensorów binarnych, przycisków i trackera GPS na język polski (zgodnie z językiem interfejsu HA).

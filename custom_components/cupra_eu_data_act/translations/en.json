@@ -41,115 +41,115 @@
   "entity": {
     "sensor": {
       "battery_level": {
-        "name": "Battery level"
+        "name": "Battery: State of charge"
       },
       "electric_range": {
-        "name": "Electric range"
+        "name": "Battery: Electric range"
       },
       "mileage": {
-        "name": "Odometer"
+        "name": "Status: Total mileage"
       },
       "target_soc": {
-        "name": "Target SoC"
+        "name": "Battery: Target SoC"
       },
       "charging_remaining_time": {
-        "name": "Charging remaining time"
+        "name": "Battery: Charging remaining time"
       },
       "battery_temperature_max": {
-        "name": "HV Battery temperature max"
+        "name": "Battery HV: Max temperature"
       },
       "battery_temperature_min": {
-        "name": "HV Battery temperature min"
+        "name": "Battery HV: Min temperature"
       },
       "target_climatisation_temperature": {
-        "name": "Target climatisation temperature"
+        "name": "Climater: Target temperature"
       },
       "climatisation_status": {
-        "name": "Climatisation status"
+        "name": "Climater: Status"
       },
       "window_heating": {
-        "name": "Window heating"
+        "name": "Climater: Window heating"
       },
       "plug_connection_state": {
-        "name": "Plug connection state"
+        "name": "Charging: Plug connection state"
       },
       "plug_lock_state": {
-        "name": "Plug lock state"
+        "name": "Charging: Plug lock state"
       },
       "service_inspection_days": {
-        "name": "Inspection due in"
+        "name": "Status: Inspection due in"
       },
       "short_term_distance": {
-        "name": "Last short length"
+        "name": "Trip short: Distance"
       },
       "short_term_duration": {
-        "name": "Last short duration"
+        "name": "Trip short: Duration"
       },
       "short_term_average_electric_engine_consumption": {
-        "name": "Short term electric consumption"
+        "name": "Trip short: Average consumption"
       },
       "long_term_distance": {
-        "name": "Last long length"
+        "name": "Trip long: Distance"
       },
       "long_term_duration": {
-        "name": "Last long duration"
+        "name": "Trip long: Duration"
       },
       "long_term_average_electric_engine_consumption": {
-        "name": "Long term electric consumption"
+        "name": "Trip long: Average consumption"
       },
       "position_latitude": {
-        "name": "Parking latitude"
+        "name": "Location: Latitude"
       },
       "position_longitude": {
-        "name": "Parking longitude"
+        "name": "Location: Longitude"
       },
       "last_update": {
-        "name": "Last update"
+        "name": "Status: Last update"
       }
     },
     "binary_sensor": {
       "is_parked": {
-        "name": "Is Parked"
+        "name": "Status: Is parked"
       },
       "is_connected": {
-        "name": "Is Online"
+        "name": "Status: Is online"
       },
       "locked": {
-        "name": "Locked"
+        "name": "Doors: Central lock"
       },
       "mirror_heating": {
-        "name": "Mirror Heating Enabled"
+        "name": "Climater: Mirror heating"
       },
       "trunk_lid_status": {
-        "name": "Trunk"
+        "name": "Doors: Trunk"
       },
       "hood_status": {
-        "name": "Hood"
+        "name": "Doors: Hood"
       },
       "window_front_left": {
-        "name": "Window Front Left"
+        "name": "Windows: Front left"
       },
       "window_front_right": {
-        "name": "Window Front Right"
+        "name": "Windows: Front right"
       },
       "window_rear_left": {
-        "name": "Window Rear Left"
+        "name": "Windows: Rear left"
       },
       "window_rear_right": {
-        "name": "Window Rear Right"
+        "name": "Windows: Rear right"
       },
       "plug_connected": {
-        "name": "Cable Connected"
+        "name": "Charging: Cable connected"
       }
     },
     "button": {
       "force_update": {
-        "name": "Force update data"
+        "name": "Status: Force data update"
       }
     },
     "device_tracker": {
       "location": {
-        "name": "Location"
+        "name": "Location: Vehicle position"
       }
     }
   }
