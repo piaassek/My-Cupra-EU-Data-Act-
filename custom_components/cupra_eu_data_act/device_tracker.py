@@ -54,7 +54,9 @@ class EUDADeviceTracker(CoordinatorEntity[EUDADataUpdateCoordinator], TrackerEnt
         if not self.vehicle:
             return None
         val = self.vehicle.getEUDADataFieldValue(LATITUDE_KEY, EUDA_DATA_CONVERSION_FLOAT)
-        return float(val) if val is not None else None
+        if val is None or val == "" or float(val) == 0.0:
+            return None
+        return float(val)
 
     @property
     def longitude(self) -> Optional[float]:
@@ -62,7 +64,9 @@ class EUDADeviceTracker(CoordinatorEntity[EUDADataUpdateCoordinator], TrackerEnt
         if not self.vehicle:
             return None
         val = self.vehicle.getEUDADataFieldValue(LONGITUDE_KEY, EUDA_DATA_CONVERSION_FLOAT)
-        return float(val) if val is not None else None
+        if val is None or val == "" or float(val) == 0.0:
+            return None
+        return float(val)
 
     @property
     def source_type(self) -> SourceType:

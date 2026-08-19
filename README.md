@@ -220,6 +220,10 @@ cards:
 
 ## 🔄 Historia wydań (Releases / Changelog)
 
+### [1.0.6] - 2026-08-19
+- 🔄 **Pełne odtwarzanie historii na starcie**: Naprawiono problem, w którym po restarcie Home Assistant pojedyncza nowa paczka telemetryczna z nocy (zawierająca tylko dane baterii/uśpienia) nadpisywała stan pamięci i powodowała status `nieznany` / `0.00 km` dla drzwi, szyb, zasięgu i lokalizacji. Teraz historia z `processed/` jest zawsze wczytywana jako baza przed nałożeniem nowych aktualizacji.
+- 🎯 **Poprawka wartości brakujących**: Pola brakujące w danej paczce zwracają `None` zamiast fałszywych zer, a tracker GPS ignoruje współrzędne `(0.0, 0.0)`.
+
 ### [1.0.5] - 2026-08-19
 - 🏷️ **Grupowanie tematyczne encji**: Wszystkie nazwy sensorów w języku polskim i angielskim otrzymały logiczne prefiksy tematyczne (`Bateria: ...`, `Drzwi: ...`, `Okna: ...`, `Klimatyzacja: ...`, `Ładowanie: ...`, `Status: ...`, `Trasa: ...`, `Lokalizacja: ...`), dzięki czemu na listach alfabetycznych w Home Assistant powiązane encje wyświetlają się zawsze razem.
 

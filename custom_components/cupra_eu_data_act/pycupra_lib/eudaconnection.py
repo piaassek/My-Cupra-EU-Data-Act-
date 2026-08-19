@@ -1224,26 +1224,9 @@ class EUDAConnection:
         """Process files in 'euda_files' folder, move them to 'in_process' folder and then extract trip information from raw data"""
         try:
             loop = asyncio.get_running_loop()
-            filesInDir = await loop.run_in_executor(None, os.scandir, self._dataFolder)
-            for entry in filesInDir:
-                if entry.is_file():
-                    if vin is None or vin in entry.name:
-                        await self.processSingleFile(entry)
-            try:
-                self.extractTripsFromRawData()
-            except Exception as e:
-                self._LOGGER.debug(f"Extraction of trips from raw data: {e}")
 
-            loop = asyncio.get_running_loop()
-            try:
-                await loop.run_in_executor(None, self.writeTripStatisticsFile, vin)
-            except Exception:
-                pass
-
-            # If self.rawData is empty (e.g. initial start with existing files or no new downloads),
-            # replay all valid processed files in chronological order (oldest first, newest last)
-            if self.rawData == {}:
-                loop = asyncio.get_running_loop()
+            # ALWAYS ensure historical processed files are loaded into rawData/currentData first on startup
+            if not getattr(self, "_history_replayed", False):
                 filesInProcessedDir = await loop.run_in_executor(
                     None, os.scandir, self._dataFolderProcessed
                 )
@@ -1257,7 +1240,24 @@ class EUDAConnection:
                 valid_entries.sort(key=lambda e: GetTimeStampFromFileName(e.name))
                 for entry in valid_entries:
                     await self.extractInformationFromFile(entry)
+                self._history_replayed = True
                 self._LOGGER.debug(f"Replayed {len(valid_entries)} processed telemetry files.")
+
+            # Process newly downloaded files in self._dataFolder
+            filesInDir = await loop.run_in_executor(None, os.scandir, self._dataFolder)
+            for entry in filesInDir:
+                if entry.is_file():
+                    if vin is None or vin in entry.name:
+                        await self.processSingleFile(entry)
+            try:
+                self.extractTripsFromRawData()
+            except Exception as e:
+                self._LOGGER.debug(f"Extraction of trips from raw data: {e}")
+
+            try:
+                await loop.run_in_executor(None, self.writeTripStatisticsFile, vin)
+            except Exception:
+                pass
 
             # Copy currentData and tripData for each vehicle in the vehicle itself
             for vehicle in self.vehicles:

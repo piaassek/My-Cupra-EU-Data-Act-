@@ -263,19 +263,7 @@ class EUDAVehicle:
                             return 0.0
                     else:
                         return element.get("value", "")
-        if conversion == EUDA_DATA_CONVERSION_FLOAT:
-            return 0.0
-        elif conversion == EUDA_DATA_CONVERSION_INT:
-            return 0
-        elif conversion == EUDA_DATA_CONVERSION_BOOL:
-            return False
-        elif conversion == EUDA_DATA_CONVERSION_DIVIDE_BY_10:
-            return 0.0
-        elif conversion == EUDA_DATA_CONVERSION_KELVIN_TO_CELSIUS:
-            return 0.0
-        elif conversion == EUDA_DATA_CONVERSION_INT_INVERT:
-            return 0
-        return ""
+        return None
 
     def isEUDADataFieldSupported(
         self, key: str, values_to_treat_as_unsupported: set=set()
